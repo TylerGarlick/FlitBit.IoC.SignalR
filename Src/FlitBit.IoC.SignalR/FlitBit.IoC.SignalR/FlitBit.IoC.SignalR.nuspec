@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <version>$version$</version>
+    <authors>Tyler Garlick</authors>
+    <owners>Tyler Garlick</owners>
+    <id>FlitBit.IoC.Web.SignalR</id>
+    <title>FlitBit.IoC.Web.SignalR</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SignalR Dependency Resolver</description>
+    <dependencies>
+      <dependency id="FlitBit.IoC.Owin"/>
+      <dependency id="Microsoft.AspNet.SignalR.Core" version="2.0.0"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Content\ExternalWireup\Dependency.FlitBit.IoC.SignalR.cs.pp" target="Content\ExternalWireup\"/>
+  </files>
+</package>
