@@ -17,19 +17,18 @@ namespace FlitBit.IoC.SignalR
         {
             var service = _container.CanConstruct(serviceType) ?
                 _container.CreateInstance(serviceType) :
-                default(object);
+                base.GetService(serviceType);
             return service;
         }
 
         public override IEnumerable<object> GetServices(Type serviceType)
         {
-            var services = default(IEnumerable<object>);
             if (_container.CanConstruct(serviceType))
             {
                 var enumerable = typeof(IEnumerable<>).MakeGenericType(serviceType);
-                services = (IEnumerable<object>)_container.NewUntyped(LifespanTracking.Automatic, enumerable);
-            }
-            return services;
+                return (IEnumerable<object>)_container.NewUntyped(LifespanTracking.Automatic, enumerable);
+            } 
+            return base.GetServices(serviceType);
         }
     }
 }
