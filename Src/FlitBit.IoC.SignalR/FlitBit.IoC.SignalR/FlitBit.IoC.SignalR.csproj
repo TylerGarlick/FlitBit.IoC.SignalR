@@ -4,13 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7AC93802-C431-426D-B146-4B98D7807580}</ProjectGuid>
+    <ProjectGuid>{2D319C71-1BD0-4CF6-B7FB-80C616490CC3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FlitBit.IoC.SignalR</RootNamespace>
     <AssemblyName>FlitBit.IoC.SignalR</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuSpecFile>FlitBit.IoC.SignalR.nuspec</NuSpecFile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,25 +34,43 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FlitBit.Copy">
-      <HintPath>packages\FlitBit.Copy.2.8.4\lib\net40\FlitBit.Copy.dll</HintPath>
+      <HintPath>..\packages\FlitBit.Copy.2.8.4\lib\net40\FlitBit.Copy.dll</HintPath>
     </Reference>
     <Reference Include="FlitBit.Core">
-      <HintPath>packages\FlitBit.Core.2.11.6\lib\net40\FlitBit.Core.dll</HintPath>
+      <HintPath>..\packages\FlitBit.Core.2.11.6\lib\net40\FlitBit.Core.dll</HintPath>
     </Reference>
     <Reference Include="FlitBit.Emit">
-      <HintPath>packages\FlitBit.Emit.2.8.7\lib\net40\FlitBit.Emit.dll</HintPath>
+      <HintPath>..\packages\FlitBit.Emit.2.8.7\lib\net40\FlitBit.Emit.dll</HintPath>
     </Reference>
     <Reference Include="FlitBit.IoC">
-      <HintPath>packages\FlitBit.IoC.2.13.1\lib\net40\FlitBit.IoC.dll</HintPath>
+      <HintPath>..\packages\FlitBit.IoC.2.13.1\lib\net40\FlitBit.IoC.dll</HintPath>
+    </Reference>
+    <Reference Include="FlitBit.IoC.Owin">
+      <HintPath>..\packages\FlitBit.IoC.Owin.1.0.1\lib\net45\FlitBit.IoC.Owin.dll</HintPath>
     </Reference>
     <Reference Include="FlitBit.IoC.Web.Common">
-      <HintPath>packages\FlitBit.IoC.Web.Common.1.0.1\lib\net45\FlitBit.IoC.Web.Common.dll</HintPath>
+      <HintPath>..\packages\FlitBit.IoC.Web.Common.1.0.4\lib\net45\FlitBit.IoC.Web.Common.dll</HintPath>
     </Reference>
     <Reference Include="FlitBit.Wireup">
-      <HintPath>packages\FlitBit.Wireup.3.1.0\lib\net40\FlitBit.Wireup.dll</HintPath>
+      <HintPath>..\packages\FlitBit.Wireup.3.1.0\lib\net40\FlitBit.Wireup.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.0.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Owin.1.1.3\lib\net45\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.2\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.2\lib\net45\Microsoft.Owin.Security.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,22 +81,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ExternalWireup\Dependency.FlitBit.IoC.Owin.cs" />
+    <Compile Include="FlitBitSignalRDependecyResolver.cs" />
     <Compile Include="ExternalWireup\Dependency.FlitBit.IoC.cs" />
+    <Compile Include="ExternalWireup\Dependency.FlitBit.IoC.Web.Common.cs" />
     <Compile Include="ExternalWireup\Dependency.FlitBit.Wireup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wireup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\ExternalWireup\Dependency.FlitBit.IoC.SignalR.cs.pp" />
+    <None Include="FlitBit.IoC.SignalR.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.6.4.js" />
-    <Content Include="Scripts\jquery-1.6.4.min.js" />
-    <Content Include="Scripts\jquery.signalR-2.0.0.js" />
-    <Content Include="Scripts\jquery.signalR-2.0.0.min.js" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

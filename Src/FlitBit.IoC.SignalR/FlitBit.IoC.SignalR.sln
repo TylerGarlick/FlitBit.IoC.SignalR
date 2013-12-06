@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlitBit.IoC.SignalR", "FlitBit.IoC.SignalR.csproj", "{7AC93802-C431-426D-B146-4B98D7807580}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlitBit.IoC.SignalR", "FlitBit.IoC.SignalR\FlitBit.IoC.SignalR.csproj", "{2D319C71-1BD0-4CF6-B7FB-80C616490CC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{03AAF8AD-8186-480B-8E24-8FBFDECF936A}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C1FF818A-BAFF-4C75-A925-FCA316E20FD6}"
+	ProjectSection(SolutionItems) = preProject
+		nuspec.xsd = nuspec.xsd
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +23,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7AC93802-C431-426D-B146-4B98D7807580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7AC93802-C431-426D-B146-4B98D7807580}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7AC93802-C431-426D-B146-4B98D7807580}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7AC93802-C431-426D-B146-4B98D7807580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D319C71-1BD0-4CF6-B7FB-80C616490CC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D319C71-1BD0-4CF6-B7FB-80C616490CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D319C71-1BD0-4CF6-B7FB-80C616490CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D319C71-1BD0-4CF6-B7FB-80C616490CC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
