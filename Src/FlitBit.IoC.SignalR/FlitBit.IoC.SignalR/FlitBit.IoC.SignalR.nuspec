@@ -9,7 +9,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>SignalR Dependency Resolver</description>
     <dependencies>
-      <dependency id="FlitBit.IoC.Owin"/>
+      <dependency id="FlitBit.IoC.Web.Common"/>
       <dependency id="Microsoft.AspNet.SignalR.Core" version="2.0.0"/>
     </dependencies>
   </metadata>

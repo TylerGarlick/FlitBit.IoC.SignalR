@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using FlitBit.IoC.Web.Common;
 using Microsoft.AspNet.SignalR;
 
 namespace FlitBit.IoC.SignalR
@@ -10,7 +11,7 @@ namespace FlitBit.IoC.SignalR
 
         public FlitBitSignalRDependecyResolver()
         {
-            _container = Container.Current;
+            _container = ContainerHelpers.Current;
         }
 
         public override object GetService(Type serviceType)
